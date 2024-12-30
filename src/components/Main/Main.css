@@ -1,0 +1,193 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: height .2s ease;
+    position: relative;
+    flex-grow: 1;
+}
+
+.main__notes {
+    height: 98%;
+    width: 99%;
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-content: center;
+}
+.main__notes.empty {
+    display: flex;
+    justify-content: center;
+}
+.main__notes.empty p {
+    color: #fff;
+    font-weight: bold;
+}
+.main__notes--modals {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+}
+
+/*----------SEARCHBAR STYLE----------*/
+.search {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 5%;
+    background-color: rgba(100, 100, 100, .5);
+    padding-inline: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.search.open {
+    animation: itemAppears .2s forwards ease;
+}
+.search.closed {
+    animation: itemDisappears .2s forwards ease;
+}
+
+.search button {
+    transition: scale .2s;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e00;
+    border: none;
+    outline: none;
+    padding: 3px;
+}
+.search button:active{
+    scale: .9;
+}
+.button__icon-search {
+    color: #fff;
+    border-radius: 50%;
+}
+
+#search__input {
+    border-radius: 20px;
+    height: 24px;
+    border: none;
+    outline: none;
+    padding-left: 10px;
+}
+
+/*---------ADDMODAL STYLE-----------*/
+.addmodal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 400px;
+    width: 520px;
+    background-color: #3333;
+    border-radius: 20px;
+    opacity: 0;
+}
+.addmodal.open {
+    animation: modalAppears .2s forwards ease;
+}
+.addmodal.closed {
+    animation: modalDisappears .2s forwards ease;
+}
+
+.addmodal header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 12%;
+    background: #5554;
+    box-shadow: 0px 0px 10px #000;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    z-index: 20;
+}
+.header__options {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+}
+.header__options input[type='color']{
+    width: 25px;
+    height: 25px;
+    -webkit-appearance: none; /* Quitar los estilos predeterminados de Webkit (Chrome, Safari) */
+    -moz-appearance: none;    /* Quitar los estilos predeterminados de Firefox */
+    appearance: none;      
+    border: none;
+    background-color: #fff;
+    border-color: #fff;
+    outline: none;
+}
+
+.header__button {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    display: flex;
+    justify-content: center;
+}
+.header__icon--add-note {
+    transition: background-color .1s ease, scale .1s ease;
+    width: 25px;
+    color: #fff;
+    padding: 2px;
+    border-radius: 10px;
+}
+.header__icon--add-note:hover {
+    background-color: #0a0;
+    box-shadow: 0 0 5px #000;
+}
+.header__icon--add-note:active {
+    scale: .9;
+}
+
+.header__buttonbar {
+    margin-right: 10px;
+}
+
+/*ADDMODAL INPUT*/
+.header__input input{
+    transition: background-color .2s ease;
+    height: 20px;
+    width: 250px;
+    text-align: center;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    scroll-behavior: unset;
+}
+.header__input input:focus, .header__input input:hover {
+    background-color: #5556;
+}
+
+/*ADDMODAL TEXTAREA*/
+.addmodal__textarea {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.addmodal__textarea textarea {
+    width: 96%;
+    height: 95%;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    resize: none;
+    color: #fff;
+}
